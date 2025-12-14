@@ -36,6 +36,7 @@ export default function Alerts() {
         <p className="text-gray-400">No issues reported 🎉</p>
       )}
 
+
       <div className="space-y-4">
         {alerts.map((alert, index) => (
           <div
