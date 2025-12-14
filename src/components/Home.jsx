@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "./Card";
 
+
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/inspections`)
+    fetch("https://observer-s328.onrender.com/api/inspections")
       .then(res => res.json())
       .then(result => {
         const data = result.data || [];
