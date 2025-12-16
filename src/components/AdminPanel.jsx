@@ -13,6 +13,7 @@ export default function AdminPanel() {
         setInspections(result.data || []);
         setLoading(false);
       })
+      
       .catch(() => setLoading(false));
   }, []);
 
