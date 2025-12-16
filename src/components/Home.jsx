@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "./Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -89,9 +91,17 @@ export default function Home() {
             <button
               onClick={() => navigate("/alerts")}
               className="px-5 py-2 rounded-lg font-semibold
-                         bg-white text-red-600 hover:bg-green-200 cursor-pointer"
+                         bg-white text-red-600  cursor-pointer"
             >
               🚨 Alerts ({problemCount})
+            </button>
+            <button
+              onClick={() => navigate("/main-alerts")}
+              className="px-5 py-2 rounded-lg font-semibold
+                         bg-white/20 hover:bg-green-200 cursor-pointer"
+            >
+              <FontAwesomeIcon icon={faTriangleExclamation} color="red" />
+  
             </button>
           </div>
         </div>
@@ -141,5 +151,6 @@ function StatCard({ title, value, danger, success }) {
         {value}
       </p>
     </div>
+
   );
 }
